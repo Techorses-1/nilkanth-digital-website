@@ -1,0 +1,217 @@
+$color-blue: #004aad;
+$color-white: #ffffff;
+$color-black: #000000;
+$color-offwhite: #f3f4f6;
+$color-green: #2e7d32;
+
+.shop-category-section {
+    background-color: $color-offwhite;
+    padding: 70px 40px;
+    font-family: "Poppins", sans-serif;
+    text-align: center;
+}
+
+.shop-category-heading {
+    font-size: 34px;
+    font-weight: 800;
+    color: $color-black;
+    margin: 0 0 14px;
+}
+
+.shop-category-subtext {
+    max-width: 700px;
+    margin: 0 auto 40px;
+    font-size: 15px;
+    font-weight: 500;
+    color: $color-blue;
+    line-height: 1.6;
+}
+
+.shop-category-slider-wrap {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.shop-category-swiper {
+    flex: 1;
+    overflow: hidden;
+
+    .swiper-slide {
+        height: auto;
+        display: flex;
+    }
+}
+
+.category-card {
+    background-color: $color-white;
+    border-radius: 20px;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.06);
+    padding: 20px 16px 22px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+}
+
+.category-img-box {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    border-radius: 14px;
+    overflow: hidden;
+    margin-bottom: 16px;
+    background-color: $color-offwhite;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+}
+
+.category-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: $color-black;
+    margin: 0 0 4px;
+    line-height: 1.3;
+}
+
+.category-count {
+    font-size: 13px;
+    font-weight: 600;
+    color: $color-green;
+    margin: 0;
+}
+
+.cat-nav {
+    flex-shrink: 0;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: none;
+    background-color: $color-white;
+    color: $color-blue;
+    font-size: 24px;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.25s ease, color 0.25s ease, transform 0.2s ease;
+    z-index: 2;
+
+    &:hover {
+        background-color: $color-blue;
+        color: $color-white;
+        transform: scale(1.06);
+    }
+}
+
+@media (max-width: 992px) {
+    .shop-category-section {
+        padding: 56px 24px;
+    }
+
+    .shop-category-heading {
+        font-size: 28px;
+    }
+
+    .shop-category-subtext {
+        font-size: 14px;
+        margin-bottom: 32px;
+    }
+
+    .category-card {
+        padding: 16px 12px 18px;
+        border-radius: 16px;
+    }
+
+    .category-title {
+        font-size: 13px;
+    }
+
+    .category-count {
+        font-size: 12px;
+    }
+
+    .cat-nav {
+        width: 38px;
+        height: 38px;
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .shop-category-section {
+        padding: 44px 16px;
+    }
+
+    .shop-category-heading {
+        font-size: 22px;
+    }
+
+    .shop-category-subtext {
+        font-size: 12.5px;
+        margin-bottom: 26px;
+    }
+
+    .shop-category-slider-wrap {
+        gap: 8px;
+    }
+
+    .category-card {
+        padding: 12px 10px 14px;
+        border-radius: 14px;
+    }
+
+    .category-img-box {
+        border-radius: 10px;
+        margin-bottom: 10px;
+    }
+
+    .category-title {
+        font-size: 11.5px;
+    }
+
+    .category-count {
+        font-size: 10.5px;
+    }
+
+    .cat-nav {
+        width: 32px;
+        height: 32px;
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .shop-category-section {
+        padding: 36px 12px;
+    }
+
+    .shop-category-heading {
+        font-size: 19px;
+    }
+
+    .category-title {
+        font-size: 10.5px;
+    }
+
+    .category-count {
+        font-size: 9.5px;
+    }
+}

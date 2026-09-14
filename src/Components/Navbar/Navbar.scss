@@ -1,0 +1,242 @@
+$color-blue: #004aad;
+$color-white: #ffffff;
+$color-black: #000000;
+$color-offwhite: #f3f4f6;
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+.navbar-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 20px 40px;
+    transition: padding 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    font-family: "Poppins", sans-serif;
+
+    .navbar-shell {
+        max-width: 1200px;
+        width: 100%;
+        margin: 0 auto;
+        border-radius: 50px;
+        overflow: hidden;
+        background-color: $color-blue;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    &.scrolled {
+        padding: 0;
+
+        .navbar-shell {
+            max-width: 100%;
+            border-radius: 0;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+    }
+
+    .navbar {
+        padding: 12px 20px 12px 30px;
+
+        &-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        &-logo {
+            display: flex;
+            flex-direction: column;
+            line-height: 1;
+            cursor: pointer;
+
+            .brand-name {
+                font-weight: 700;
+                font-size: 20px;
+                color: $color-white;
+                letter-spacing: 0.5px;
+            }
+
+            .brand-tagline {
+                font-family: "Brush Script MT", cursive;
+                font-size: 16px;
+                color: $color-white;
+                margin-top: -4px;
+                align-self: flex-start;
+            }
+        }
+
+        &-links {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+
+            li a {
+                display: inline-block;
+                color: $color-white;
+                text-decoration: none;
+                font-weight: 600;
+                font-size: 15px;
+                letter-spacing: 0.3px;
+            }
+        }
+
+        &-inquiry-btn {
+            background-color: $color-white;
+            color: $color-black;
+            font-weight: 700;
+            font-size: 15px;
+            padding: 12px 28px;
+            border-radius: 50px;
+            text-decoration: none;
+            display: inline-block;
+            cursor: pointer;
+        }
+    }
+
+    // ---- Uiverse.io by JulanDeAlb hamburger (controlled checkbox) ----
+    .hamburger {
+        display: none;
+        cursor: pointer;
+
+        input {
+            display: none;
+        }
+
+        svg {
+            height: 1.8em;
+            transition: transform 600ms cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .line {
+            fill: none;
+            stroke: $color-white;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            stroke-width: 3;
+            transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
+                stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .line-top-bottom {
+            stroke-dasharray: 12 63;
+        }
+
+        input:checked+svg {
+            transform: rotate(-45deg);
+        }
+
+        input:checked+svg .line-top-bottom {
+            stroke-dasharray: 20 300;
+            stroke-dashoffset: -32.42;
+        }
+    }
+
+    .navbar-mobile-menu {
+        overflow: hidden;
+
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 10px 30px 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+
+            li a {
+                color: $color-white;
+                text-decoration: none;
+                font-weight: 600;
+                font-size: 16px;
+                display: block;
+            }
+
+            .mobile-inquiry-btn {
+                background-color: $color-white;
+                color: $color-black;
+                font-weight: 700;
+                text-align: center;
+                padding: 12px;
+                border-radius: 50px;
+                width: fit-content;
+            }
+        }
+    }
+}
+
+// Tablet - same layout as desktop
+@media (max-width: 992px) {
+    .navbar-wrapper {
+        padding: 16px 24px;
+
+        .navbar {
+            padding: 10px 16px 10px 24px;
+
+            &-links {
+                gap: 24px;
+            }
+        }
+    }
+}
+
+// Mobile - hamburger view
+@media (max-width: 768px) {
+    .navbar-wrapper {
+        padding: 16px 20px;
+
+        &.scrolled .navbar {
+            padding: 12px 20px;
+        }
+
+        .navbar {
+            padding: 10px 12px 10px 20px;
+
+            &-links {
+                display: none;
+            }
+
+            &-inquiry-btn {
+                display: none;
+            }
+        }
+
+        .hamburger {
+            display: flex;
+            align-items: center;
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar-wrapper {
+        padding: 12px 16px;
+
+        .navbar {
+            padding: 8px 20px 8px 16px;
+
+            &-logo {
+                .brand-name {
+                    font-size: 17px;
+                }
+
+                .brand-tagline {
+                    font-size: 14px;
+                }
+            }
+        }
+
+        .hamburger svg {
+            height: 1.6em;
+        }
+    }
+}

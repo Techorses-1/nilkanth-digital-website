@@ -1,0 +1,148 @@
+$color-blue: #004aad;
+$color-white: #ffffff;
+$color-black: #000000;
+$color-offwhite: #f3f4f6;
+$color-lightblue: #eaf1fb;
+
+.all-scales-section {
+  background-color: $color-white;
+  padding: 60px 40px 100PX;
+  font-family: "Poppins", sans-serif;
+}
+
+.all-scales-wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+  position: relative;
+  width: 100%;
+  aspect-ratio: 2.6 / 1;
+}
+
+.blue-card {
+  position: absolute;
+  inset: 0;
+  background-color: $color-lightblue;
+  border-radius: 28px;
+}
+
+.truck-image-wrap {
+  position: absolute;
+  top: 15%;
+  left: 10%;
+  right: -3%;
+  bottom: -10%;
+  border-radius: 22px;
+  overflow: hidden;
+  cursor: pointer;
+
+  img {
+    width: 90%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+}
+
+.all-scales-text {
+  position: absolute;
+  left: 32px;
+  bottom: -11%;
+  z-index: 2;
+  max-width: 36%;
+
+  p {
+    margin: 0;
+    font-size: 40px;
+    font-weight: 600;
+    color: $color-black;
+    line-height: 1.25;
+  }
+
+  .highlight {
+    color: $color-blue;
+  }
+}
+
+// Tablet
+@media (max-width: 992px) {
+  .all-scales-section {
+    padding: 56px 24px;
+  }
+
+  .truck-image-wrap {
+    left: 34%;
+  }
+
+  .all-scales-text {
+    max-width: 30%;
+    p {
+      font-size: 20px;
+    }
+  }
+}
+
+// Mobile — reduced image height so it fits inside the card properly
+@media (max-width: 768px) {
+  .all-scales-section {
+    padding: 44px 20px;
+  }
+
+  .all-scales-wrap {
+    aspect-ratio: 1.9 / 1;
+  }
+
+  .blue-card {
+    border-radius: 20px;
+  }
+
+  .truck-image-wrap {
+    top: 12%;
+    left: 6%;
+    right: -2%;
+    bottom: 4%;
+    border-radius: 16px;
+
+    img {
+      width: 100%;
+      object-position: center 35%;
+    }
+  }
+
+  .all-scales-text {
+    left: 16px;
+    bottom: 14px;
+    max-width: 46%;
+
+    p {
+      font-size: 15px;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .all-scales-wrap {
+    aspect-ratio: 1.7 / 1;
+  }
+
+  .truck-image-wrap {
+    top: 10%;
+    left: -7%;
+    right: -2%;
+    bottom: 6%;
+    border-radius: 12px;
+
+    img {
+      object-position: center 35%;
+    }
+  }
+
+  .all-scales-text {
+    left: 12px;
+    bottom: -11% ;
+       max-width: 52%;
+
+    p {
+      font-size: 18px;
+    }
+  }
+}

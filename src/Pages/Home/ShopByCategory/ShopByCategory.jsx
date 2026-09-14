@@ -2,6 +2,7 @@ import { useRef } from "react";
 import { motion } from "framer-motion";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
+import { HiOutlineArrowLongLeft, HiOutlineArrowLongRight } from "react-icons/hi2";
 import "swiper/css";
 import "swiper/css/navigation";
 import "./ShopByCategory.scss";
@@ -107,7 +108,7 @@ const ShopByCategory = () => {
                     onClick={() => swiperRef.current?.slidePrev()}
                     aria-label="Previous"
                 >
-                    &#8249;
+                    <HiOutlineArrowLongLeft />
                 </button>
 
                 <Swiper
@@ -143,7 +144,7 @@ const ShopByCategory = () => {
                     onClick={() => swiperRef.current?.slideNext()}
                     aria-label="Next"
                 >
-                    &#8250;
+                    <HiOutlineArrowLongRight />
                 </button>
             </motion.div>
         </section>

@@ -1,10 +1,13 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { Link, useLocation } from "react-router-dom";
 import "./Navbar.scss";
+import logo from "../../assets/logo/white_logo.png"
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -20,10 +23,13 @@ const Navbar = () => {
   }, [isMobileMenuOpen]);
 
   const navLinks = [
-    { label: "Home", href: "#home" },
-    { label: "Product", href: "#product" },
-    { label: "Contact", href: "#contact" },
+    { label: "Home", href: "/" },
+    { label: "Product", href: "/product" },
+    { label: "Categories", href: "/categories" },
+    { label: "Contact", href: "/contact" },
   ];
+
+  const isActive = (href) => location.pathname === href;
 
   return (
     <header className={`navbar-wrapper ${isScrolled ? "scrolled" : ""}`}>
@@ -37,20 +43,25 @@ const Navbar = () => {
               whileHover={{ scale: 1.03 }}
               transition={{ type: "spring", stiffness: 300 }}
             >
-              <span className="brand-name">NILKANTH</span>
-              <span className="brand-tagline">Digital</span>
+              <Link to="/">
+                <img src={logo} alt="Nilkanth Digital" className="navbar-logo-img" />
+              </Link>
             </motion.div>
 
             <ul className="navbar-links">
               {navLinks.map((link) => (
                 <li key={link.label}>
-                  <motion.a
-                    href={link.href}
+                  <motion.div
                     whileHover={{ y: -2 }}
                     transition={{ type: "spring", stiffness: 400, damping: 15 }}
                   >
-                    {link.label}
-                  </motion.a>
+                    <Link
+                      to={link.href}
+                      className={isActive(link.href) ? "active" : ""}
+                    >
+                      {link.label}
+                    </Link>
+                  </motion.div>
                 </li>
               ))}
             </ul>
@@ -100,12 +111,13 @@ const Navbar = () => {
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: index * 0.08, duration: 0.3 }}
                   >
-                    <a
-                      href={link.href}
+                    <Link
+                      to={link.href}
+                      className={isActive(link.href) ? "active" : ""}
                       onClick={() => setIsMobileMenuOpen(false)}
                     >
                       {link.label}
-                    </a>
+                    </Link>
                   </motion.li>
                 ))}
                 <motion.li

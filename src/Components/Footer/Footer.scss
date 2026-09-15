@@ -29,28 +29,19 @@ $color-white: #ffffff;
     margin: 0 0 16px;
 }
 
-.footer-logo {
-    font-size: 28px;
-    font-weight: 800;
-    letter-spacing: 0.5px;
-    margin: 0 0 6px;
-    line-height: 1;
-    display: flex;
-    flex-direction: column;
-}
-
-.footer-logo-script {
-    font-family: "Brush Script MT", "Segoe Script", cursive;
-    font-weight: 400;
-    font-size: 26px;
-    margin-top: -6px;
+.footer-logo-img {
+    height: 120px;
+    width: auto;
+    display: block;
+    object-fit: contain;
+    margin-top: -1%;
 }
 
 .footer-tagline {
     display: flex;
     align-items: center;
     gap: 14px;
-    margin-top: 18px;
+    margin-top: 5px;
 
     .tagline-line {
         width: 3px;
@@ -295,6 +286,7 @@ $color-white: #ffffff;
     .contact-text {
         max-width: 250px;
     }
+
     .address-text {
         margin-left: -10px;
     }
@@ -322,16 +314,13 @@ $color-white: #ffffff;
         padding: 40px 20px 18px;
     }
 
-    .footer-logo {
-        font-size: 24px;
-    }
-
-    .footer-logo-script {
-        font-size: 22px;
+    .footer-logo-img {
+        height: 100px;
     }
 
     .footer-tagline p {
         font-size: 13.5px;
+        margin-top: 10px;
     }
 
     .footer-col-title {

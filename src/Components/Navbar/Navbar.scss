@@ -53,24 +53,15 @@ $color-offwhite: #f3f4f6;
 
         &-logo {
             display: flex;
-            flex-direction: column;
-            line-height: 1;
+            align-items: center;
             cursor: pointer;
+        }
 
-            .brand-name {
-                font-weight: 700;
-                font-size: 20px;
-                color: $color-white;
-                letter-spacing: 0.5px;
-            }
-
-            .brand-tagline {
-                font-family: "Brush Script MT", cursive;
-                font-size: 16px;
-                color: $color-white;
-                margin-top: -4px;
-                align-self: flex-start;
-            }
+        &-logo-img {
+            height: 55px;
+            width: auto;
+            display: block;
+            object-fit: contain;
         }
 
         &-links {
@@ -88,6 +79,32 @@ $color-offwhite: #f3f4f6;
                 font-weight: 600;
                 font-size: 15px;
                 letter-spacing: 0.3px;
+                position: relative;
+                padding-bottom: 4px;
+
+                &::after {
+                    content: "";
+                    position: absolute;
+                    left: 0;
+                    bottom: 0;
+                    width: 0%;
+                    height: 2px;
+                    background-color: $color-white;
+                    border-radius: 2px;
+                    transition: width 0.3s ease;
+                }
+
+                &:hover::after {
+                    width: 100%;
+                }
+
+                &.active {
+                    font-weight: 700;
+
+                    &::after {
+                        width: 100%;
+                    }
+                }
             }
         }
 
@@ -158,7 +175,33 @@ $color-offwhite: #f3f4f6;
                 text-decoration: none;
                 font-weight: 600;
                 font-size: 16px;
-                display: block;
+                display: inline-block;
+                position: relative;
+                padding-bottom: 3px;
+
+                &::after {
+                    content: "";
+                    position: absolute;
+                    left: 0;
+                    bottom: 0;
+                    width: 0%;
+                    height: 2px;
+                    background-color: $color-white;
+                    border-radius: 2px;
+                    transition: width 0.3s ease;
+                }
+
+                &:hover::after {
+                    width: 100%;
+                }
+
+                &.active {
+                    font-weight: 800;
+
+                    &::after {
+                        width: 100%;
+                    }
+                }
             }
 
             .mobile-inquiry-btn {
@@ -166,9 +209,13 @@ $color-offwhite: #f3f4f6;
                 color: $color-black;
                 font-weight: 700;
                 text-align: center;
-                padding: 12px;
+                padding: 12px 20px;
                 border-radius: 50px;
                 width: fit-content;
+
+                &::after {
+                    display: none;
+                }
             }
         }
     }
@@ -224,14 +271,8 @@ $color-offwhite: #f3f4f6;
         .navbar {
             padding: 8px 20px 8px 16px;
 
-            &-logo {
-                .brand-name {
-                    font-size: 17px;
-                }
-
-                .brand-tagline {
-                    font-size: 14px;
-                }
+            &-logo-img {
+                height: 45px;
             }
         }
 

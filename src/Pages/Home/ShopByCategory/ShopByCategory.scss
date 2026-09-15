@@ -226,3 +226,31 @@ $color-green: #2e7d32;
         font-size: 9.5px;
     }
 }
+
+.shop-category-view-all-wrap {
+    display: flex;
+    justify-content: center;
+    margin-top: 36px;
+
+    .view-all-btn {
+        display: inline-block;
+        background-color: $color-blue;
+        color: $color-white;
+        font-family: "Poppins", sans-serif;
+        font-weight: 600;
+        font-size: 14px;
+        padding: 13px 32px;
+        border-radius: 50px;
+        text-decoration: none;
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
+
+        &:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 24px rgba(0, 74, 173, 0.25);
+        }
+    }
+}
+
+.category-card {
+    cursor: pointer;
+}

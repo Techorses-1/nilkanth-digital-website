@@ -7,6 +7,8 @@ import ScrollToTop from "./Components/GoToTop/ScrollToTop";
 import Home from "./Pages/Home/Home";
 import Navbar from "./Components/Navbar/Navbar";
 import Footer from "./Components/Footer/Footer";
+import Products from "./Pages/Products/Products";
+import Categories from "./Pages/Categories/Categories";
 
 
 
@@ -19,6 +21,8 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/product" element={<Products />} />
+          <Route path="/categories" element={<Categories />} />
 
 
         </Routes>

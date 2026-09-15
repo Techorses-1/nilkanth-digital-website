@@ -12,7 +12,7 @@ const Home = () => {
             <ProductShowcase />
             <ShopByCategory/>
             <AboutUs/>
-            <HomeProducts/>
+            {/* <HomeProducts/> */}
             <AllScalesBanner/>
             
         </>

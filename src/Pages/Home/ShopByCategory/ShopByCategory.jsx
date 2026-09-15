@@ -1,62 +1,18 @@
-import { useRef } from "react";
+import { useRef, useMemo } from "react";
 import { motion } from "framer-motion";
+import { useNavigate, Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import { HiOutlineArrowLongLeft, HiOutlineArrowLongRight } from "react-icons/hi2";
+import categoriesData from "../../../data/categories";
 import "swiper/css";
 import "swiper/css/navigation";
 import "./ShopByCategory.scss";
 
-const categories = [
-    {
-        id: "jewellery",
-        title: "Jewellery Weighing Scales",
-        count: "250 Products",
-        image: "https://images.unsplash.com/photo-1601121141461-9d6647bca1ed?w=600&q=80&auto=format&fit=crop",
-    },
-    {
-        id: "tabletop",
-        title: "Table Top Weighing Scales",
-        count: "250 Products",
-        image: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=600&q=80&auto=format&fit=crop",
-    },
-    {
-        id: "kisan",
-        title: "Kisan-Transport Scale",
-        count: "250 Products",
-        image: "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=600&q=80&auto=format&fit=crop",
-    },
-    {
-        id: "analytical",
-        title: "Analytical-Precision Lab Scales",
-        count: "250 Products",
-        image: "https://images.unsplash.com/photo-1751054554594-85de2fe63e6b?w=600&q=80&auto=format&fit=crop",
-    },
-    {
-        id: "platform",
-        title: "Platform Weighing Scale",
-        count: "250 Products",
-        image: "https://images.unsplash.com/photo-1682655012904-0e67019e8a0e?w=600&q=80&auto=format&fit=crop",
-    },
-    {
-        id: "crane",
-        title: "Crane Weighing Scale",
-        count: "250 Products",
-        image: "https://images.unsplash.com/photo-1522844990619-4951c40f7eda?w=600&q=80&auto=format&fit=crop",
-    },
-    {
-        id: "truck",
-        title: "Truck Weighbridge",
-        count: "250 Products",
-        image: "https://images.unsplash.com/photo-1581092918484-8313ce2a9b8e?w=600&q=80&auto=format&fit=crop",
-    },
-    {
-        id: "personal",
-        title: "Personal Bathroom Scale",
-        count: "250 Products",
-        image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&q=80&auto=format&fit=crop",
-    },
-];
+const getRandomCategories = (arr, count) => {
+    const shuffled = [...arr].sort(() => Math.random() - 0.5);
+    return shuffled.slice(0, count);
+};
 
 const fadeUp = {
     hidden: { opacity: 0, y: 30 },
@@ -69,6 +25,14 @@ const fadeUp = {
 
 const ShopByCategory = () => {
     const swiperRef = useRef(null);
+    const navigate = useNavigate();
+
+    // pick 6 random categories once per mount (won't reshuffle on re-render)
+    const randomCategories = useMemo(() => getRandomCategories(categoriesData, 6), []);
+
+    const handleCategoryClick = (categoryId) => {
+        navigate(`/product?category=${categoryId}`);
+    };
 
     return (
         <section className="shop-category-section">
@@ -126,14 +90,21 @@ const ShopByCategory = () => {
                     }}
                     className="shop-category-swiper"
                 >
-                    {categories.map((cat) => (
+                    {randomCategories.map((cat) => (
                         <SwiperSlide key={cat.id}>
-                            <div className="category-card">
+                            <div
+                                className="category-card"
+                                onClick={() => handleCategoryClick(cat.id)}
+                                role="button"
+                                tabIndex={0}
+                                onKeyDown={(e) => {
+                                    if (e.key === "Enter") handleCategoryClick(cat.id);
+                                }}
+                            >
                                 <div className="category-img-box">
-                                    <img src={cat.image} alt={cat.title} />
+                                    <img src={cat.image} alt={cat.name} loading="lazy" />
                                 </div>
-                                <h3 className="category-title">{cat.title}</h3>
-                                <p className="category-count">{cat.count}</p>
+                                <h3 className="category-title">{cat.name}</h3>
                             </div>
                         </SwiperSlide>
                     ))}
@@ -146,6 +117,19 @@ const ShopByCategory = () => {
                 >
                     <HiOutlineArrowLongRight />
                 </button>
+            </motion.div>
+
+            <motion.div
+                className="shop-category-view-all-wrap"
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.5 }}
+                variants={fadeUp}
+                custom={3}
+            >
+                <Link to="/categories" className="view-all-btn">
+                    View All Categories
+                </Link>
             </motion.div>
         </section>
     );

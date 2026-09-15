@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
 import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaInstagram, FaFacebookF, FaYoutube } from "react-icons/fa";
 import "./Footer.scss";
+import logo from "../../assets/logo/white_logo.png"
+
 
 const menuLinks = [
     { id: "home", label: "Home", href: "/" },
@@ -53,10 +55,7 @@ const Footer = () => {
                         variants={fadeUp}
                         custom={0}
                     >
-                        <h2 className="footer-logo">
-                            NILKANTH
-                            <span className="footer-logo-script">Digital</span>
-                        </h2>
+                        <img src={logo} alt="Nilkanth Digital" className="footer-logo-img" />
 
                         <div className="footer-tagline">
                             <span className="tagline-line" />

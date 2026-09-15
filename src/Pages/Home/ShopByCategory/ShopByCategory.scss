@@ -67,16 +67,22 @@ $color-green: #2e7d32;
 
 .category-img-box {
     width: 100%;
-    aspect-ratio: 1 / 1;
+    aspect-ratio: 71 / 45; // 👈 same ratio as category page & product section — locked across all breakpoints
     border-radius: 14px;
     overflow: hidden;
     margin-bottom: 16px;
     background-color: $color-offwhite;
+    padding: 14px; // 👈 same padding as other sections
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     img {
         width: 100%;
         height: 100%;
-        object-fit: cover;
+        object-fit: contain; // 👈 changed from cover — matches category/product page behavior
+        object-position: center;
         display: block;
     }
 }
@@ -188,6 +194,7 @@ $color-green: #2e7d32;
     .category-img-box {
         border-radius: 10px;
         margin-bottom: 10px;
+        padding: 10px;
     }
 
     .category-title {
@@ -216,6 +223,10 @@ $color-green: #2e7d32;
 
     .shop-category-heading {
         font-size: 19px;
+    }
+
+    .category-img-box {
+        padding: 8px;
     }
 
     .category-title {

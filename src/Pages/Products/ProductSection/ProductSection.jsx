@@ -2,7 +2,7 @@ import React, { useState, useEffect, useMemo, useRef } from "react";
 import { useSearchParams } from "react-router-dom";
 import useDebounce from "./useDebounce";
 import categoriesData from "../../../data/categories";
-import productsData from "../../../data/products.json";
+import productsData from "../../../data/products";
 import "./ProductSection.scss";
 
 const ProductSection = () => {

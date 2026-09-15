@@ -9,6 +9,7 @@ import Navbar from "./Components/Navbar/Navbar";
 import Footer from "./Components/Footer/Footer";
 import Products from "./Pages/Products/Products";
 import Categories from "./Pages/Categories/Categories";
+import Contact from "./Pages/Contact/Contact";
 
 
 
@@ -23,6 +24,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/product" element={<Products />} />
           <Route path="/categories" element={<Categories />} />
+          <Route path="/contact" element={<Contact />} />
 
 
         </Routes>

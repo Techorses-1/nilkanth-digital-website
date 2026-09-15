@@ -27,11 +27,17 @@ $color-offwhite: #f3f4f6;
         height: 100%;
         cursor: pointer;
 
-        img {
+        .showcase-img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             display: block;
+            background: rgba(0, 74, 173, 0.25);
+        }
+
+        // desktop/tablet image visible by default, mobile image hidden
+        .showcase-img-mobile {
+            display: none;
         }
 
         &-overlay {
@@ -129,6 +135,15 @@ $color-offwhite: #f3f4f6;
             grid-row: auto !important;
             height: 220px;
             border-radius: 14px;
+
+            // swap images only at mobile breakpoint
+            .showcase-img-desktop {
+                display: none;
+            }
+
+            .showcase-img-mobile {
+                display: block;
+            }
 
             &-overlay {
                 padding: 16px;

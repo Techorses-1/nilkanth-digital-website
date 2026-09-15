@@ -1,12 +1,14 @@
 import { motion } from "framer-motion";
+import { Link, useLocation } from "react-router-dom";
 import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaInstagram, FaFacebookF, FaYoutube } from "react-icons/fa";
 import "./Footer.scss";
-import logo from "../../assets/logo/white_logo.png"
+import logo from "../../assets/logo/white_logo.png";
 
 
 const menuLinks = [
     { id: "home", label: "Home", href: "/" },
     { id: "product", label: "Product", href: "/product" },
+    { id: "categories", label: "Categories", href: "/categories" },
     { id: "contact", label: "Contact", href: "/contact" },
 ];
 
@@ -43,6 +45,9 @@ const fadeUp = {
 };
 
 const Footer = () => {
+    const location = useLocation();
+    const isActive = (href) => location.pathname === href;
+
     return (
         <footer className="site-footer">
             <div className="footer__container">
@@ -79,7 +84,12 @@ const Footer = () => {
                         <ul>
                             {menuLinks.map((link) => (
                                 <li key={link.id}>
-                                    <a href={link.href}>{link.label}</a>
+                                    <Link
+                                        to={link.href}
+                                        className={isActive(link.href) ? "active" : ""}
+                                    >
+                                        {link.label}
+                                    </Link>
                                 </li>
                             ))}
                         </ul>
@@ -144,7 +154,7 @@ const Footer = () => {
                     <SocialIcons className="footer-social--desktop" />
                 </div>
             </div>
-        </footer >
+        </footer>
     );
 };
 

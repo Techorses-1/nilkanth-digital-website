@@ -7,7 +7,7 @@ $color-offwhite: #f3f4f6;
     background-color: $color-white;
     padding: 60px 40px;
     font-family: "Poppins", sans-serif;
-    margin-top: 60PX;
+    margin-top: 60px;
 }
 
 .product-section-header {
@@ -132,23 +132,24 @@ $color-offwhite: #f3f4f6;
     }
 
     .dropdown-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  height: 190px; // fixed height, max-height ki jagah — force scrollable
-  overflow-y: scroll; // auto ki jagah scroll — force scrollbar hamesha active
-  overscroll-behavior: contain;
-  touch-action: pan-y;
-  position: relative;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        height: 190px;
+        overflow-y: scroll;
+        overscroll-behavior: contain;
+        touch-action: pan-y;
+        position: relative;
 
-  &::-webkit-scrollbar {
-    width: 5px;
-  }
-  &::-webkit-scrollbar-thumb {
-    background: rgba(0, 0, 0, 0.15);
-    border-radius: 10px;
-  }
-}
+        &::-webkit-scrollbar {
+            width: 5px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background: rgba(0, 0, 0, 0.15);
+            border-radius: 10px;
+        }
+    }
 
     .dropdown-item {
         padding: 10px 12px;
@@ -206,13 +207,20 @@ $color-offwhite: #f3f4f6;
 
     &-img {
         width: 100%;
-        height: 180px;
+        aspect-ratio: 71 / 45; // 👈 same ratio as category page — locked across all breakpoints
+        height: auto;
         background-color: $color-offwhite;
+        padding: 14px;
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
         img {
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            object-fit: contain; // 👈 changed from cover, so nothing gets badly cropped
+            object-position: center;
             display: block;
         }
     }
@@ -250,7 +258,7 @@ $color-offwhite: #f3f4f6;
 
     .skeleton-img {
         width: 100%;
-        height: 180px;
+        aspect-ratio: 71 / 45; // 👈 matches real image ratio, no layout shift on load
         background: linear-gradient(90deg,
                 $color-offwhite 25%,
                 #e9ebee 37%,
@@ -348,7 +356,7 @@ $color-offwhite: #f3f4f6;
     }
 
     .product-card-img {
-        height: 130px;
+        padding: 10px;
     }
 }
 
@@ -358,7 +366,7 @@ $color-offwhite: #f3f4f6;
     }
 
     .product-card-img {
-        height: 110px;
+        padding: 8px;
     }
 
     .product-name {

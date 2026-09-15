@@ -1,6 +1,8 @@
 import { useEffect, useRef } from "react";
 import { motion, useInView, useMotionValue, useTransform, animate } from "framer-motion";
 import "./AboutUs.scss";
+import about1 from "../../../assets/home/about1.png"
+import about2 from "../../../assets/home/about2.png"
 
 // ---- Single spinning digit (casino slot-reel style) ----
 const SlotDigit = ({ digit, delay, isInView }) => {
@@ -65,13 +67,13 @@ const stats = [
 const images = [
     {
         id: "platform",
-        src: "https://images.unsplash.com/photo-1682655012904-0e67019e8a0e?w=1000&q=80&auto=format&fit=crop",
+        src:  about1 ,
         alt: "Baby weighing scale in use",
         className: "about-img-left",
     },
     {
         id: "personal",
-        src: "https://images.unsplash.com/photo-1522844990619-4951c40f7eda?w=1000&q=80&auto=format&fit=crop",
+        src: about2,
         alt: "Person standing on digital bathroom scale",
         className: "about-img-right",
     },

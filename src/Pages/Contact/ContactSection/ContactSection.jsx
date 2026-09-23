@@ -94,8 +94,7 @@ const ContactSection = () => {
                                 <FaMapMarkerAlt />
                             </span>
                             <span>
-                                Dayal Bhuvan Lane, Opp Lalcourt, Rajmahel Road, Vadodara,
-                                390001
+                                Dayal Bhuvan Lane, Opp Lalcourt, Rajmahel Road, Vadodara (390001)
                             </span>
                         </li>
                     </ul>

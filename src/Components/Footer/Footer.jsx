@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Link, useLocation } from "react-router-dom";
 import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaInstagram, FaFacebookF, FaYoutube } from "react-icons/fa";
 import "./Footer.scss";
-import logo from "../../assets/logo/white_logo.png";
+import logo from "../../assets/logo/blue_logo.png";
 
 
 const menuLinks = [
@@ -105,31 +105,42 @@ const Footer = () => {
                     >
                         <ul>
                             <li>
-                                <span className="contact-icon">
-                                    <FaPhoneAlt />
-                                </span>
-                                <span className="contact-text">
-                                    <span className="contact-label">Call: </span>
-                                    +91 1234567890
-                                </span>
+                                <a href="tel:+918485921934" className="contact-link">
+                                    <span className="contact-icon">
+                                        <FaPhoneAlt />
+                                    </span>
+                                    <span className="contact-text">
+                                        <span className="contact-label">Call: </span>
+                                        +91 8485921934
+                                    </span>
+                                </a>
                             </li>
                             <li>
-                                <span className="contact-icon">
-                                    <FaEnvelope />
-                                </span>
-                                <span className="contact-text">
-                                    <span className="contact-label">Mail: </span>
-                                    info@nilkanthdigitalscale.in
-                                </span>
+                                <a href="mailto:nilkanthdigitalscale@gmail.com" className="contact-link">
+                                    <span className="contact-icon">
+                                        <FaEnvelope />
+                                    </span>
+                                    <span className="contact-text">
+                                        <span className="contact-label">Mail: </span>
+                                        nilkanthdigitalscale@gmail.com
+                                    </span>
+                                </a>
                             </li>
                             <li>
-                                <span className="contact-icon">
-                                    <FaMapMarkerAlt />
-                                </span>
-                                <span className="contact-text address-text">
-                                    <span className="contact-label">Address: </span>
-                                    Dayal Bhuvan Lane, Opp Lalcourt, Rajmahel Road, Vadodara, 390001
-                                </span>
+                                <a
+                                    href="https://www.google.com/maps/search/?api=1&query=Dayal+Bhuvan+Lane,+Opp+Lalcourt,+Rajmahel+Road,+Vadodara,+390001"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="contact-link"
+                                >
+                                    <span className="contact-icon">
+                                        <FaMapMarkerAlt />
+                                    </span>
+                                    <span className="contact-text address-text">
+                                        <span className="contact-label">Address: </span>
+                                        Dayal Bhuvan Lane, Opp Lalcourt, Rajmahel Road, Vadodara, 390001
+                                    </span>
+                                </a>
                             </li>
                         </ul>
                     </motion.div>

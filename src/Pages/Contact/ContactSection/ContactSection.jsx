@@ -78,24 +78,38 @@ const ContactSection = () => {
 
                     <ul className="contact-details-list">
                         <li>
-                            <span className="contact-icon">
-                                <FaPhoneAlt />
-                            </span>
-                            <span>+91 1234567890</span>
+                            <a href="tel:+918485921934" className="contact-detail-link">
+                                <span className="contact-icon">
+                                    <FaPhoneAlt />
+                                </span>
+                                <span>+91 8485921934</span>
+                            </a>
                         </li>
                         <li>
-                            <span className="contact-icon">
-                                <FaEnvelope />
-                            </span>
-                            <span>info@nilkanthdigitalscale.in</span>
+                            <a
+                                href="mailto:nilkanthdigitalscale@gmail.com"
+                                className="contact-detail-link"
+                            >
+                                <span className="contact-icon">
+                                    <FaEnvelope />
+                                </span>
+                                <span>nilkanthdigitalscale@gmail.com</span>
+                            </a>
                         </li>
                         <li>
-                            <span className="contact-icon">
-                                <FaMapMarkerAlt />
-                            </span>
-                            <span>
-                                Dayal Bhuvan Lane, Opp Lalcourt, Rajmahel Road, Vadodara (390001)
-                            </span>
+                            <a
+                                href="https://www.google.com/maps/search/?api=1&query=Dayal+Bhuvan+Lane,+Opp+Lalcourt,+Rajmahel+Road,+Vadodara,+390001"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="contact-detail-link"
+                            >
+                                <span className="contact-icon">
+                                    <FaMapMarkerAlt />
+                                </span>
+                                <span>
+                                    Dayal Bhuvan Lane, Opp Lalcourt, Rajmahel Road, Vadodara (390001)
+                                </span>
+                            </a>
                         </li>
                     </ul>
 

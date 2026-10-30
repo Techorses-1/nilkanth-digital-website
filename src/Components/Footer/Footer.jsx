@@ -62,6 +62,11 @@ const Footer = () => {
                     >
                         <img src={logo} alt="Nilkanth Digital" className="footer-logo-img" />
 
+                        <p className="footer-proprietor">
+                            <span className="proprietor-label">Proprietor: </span>
+                            <span className="proprietor-name">Nainil Sanjaybhai Mistry</span>
+                        </p>
+
                         <div className="footer-tagline">
                             <span className="tagline-line" />
                             <p>

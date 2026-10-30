@@ -360,3 +360,44 @@ $color-white: #ffffff;
         font-size: 12px;
     }
 }
+
+// ===== Proprietor name =====
+.footer-proprietor {
+    margin: 20px 0 0;
+    font-size: 14px;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.85);
+
+    .proprietor-label {
+        font-weight: 400;
+        opacity: 0.8;
+    }
+
+    .proprietor-name {
+        font-weight: 600;
+        color: $color-white;
+        letter-spacing: 0.3px;
+    }
+}
+
+// Space between proprietor and tagline
+.footer-col-brand .footer-tagline {
+    margin-top: 14px;
+}
+
+@media (max-width: 992px) {
+    .footer-proprietor {
+        text-align: center;
+        margin-top: 12px;
+    }
+
+    .footer-col-brand .footer-tagline {
+        margin-top: 12px;
+    }
+}
+
+@media (max-width: 768px) {
+    .footer-proprietor {
+        font-size: 13px;
+    }
+}
